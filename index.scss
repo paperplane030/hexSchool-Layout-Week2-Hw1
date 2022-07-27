@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Roboto', sans-serif;
   .banner {
@@ -14,9 +19,11 @@ body {
       transform: translate(-50%, -50%);
       h1 {
         color: white;
+        font-weight: 900;
         font-size: 80px;
         line-height: 106px;
         .top {
+          font-weight: bold;
           font-size: 24px;
           line-height: 42px;
         }
@@ -27,11 +34,23 @@ body {
         line-height: 36px;
       }
       .banner-sns {
-        display: flex;
-        gap: 16px;
         margin-top: 40px;
-        img {
-          cursor: pointer;
+        .banner-sns-list {
+          display: flex;
+          justify-content: space-between;
+          gap: 16px;
+          li {
+            display: inline;
+            .sns-link {
+              text-decoration: none;
+              color: transparent;
+              &:hover {
+                img {
+                  transform: translateY(-5px);
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -61,6 +80,7 @@ body {
       padding-bottom: 24px;
       position: relative;
       text-align: center;
+      font-weight: bold;
       &:after {
         content: '';
         position: absolute;
@@ -78,6 +98,7 @@ body {
       &-list {
         padding-top: 28px;
         text-align: center;
+        font-weight: bold;
         &-text {
           display: flex;
           align-items: center;
@@ -102,10 +123,7 @@ body {
     background-color: black;
     color: white;
     text-align: center;
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+
     &-title {
       margin-bottom: 12px;
       font-size: 64px;
@@ -126,6 +144,8 @@ body {
     }
     &-img-block {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 24px;
     }
   }
@@ -133,10 +153,6 @@ body {
     padding-top: 56px;
     padding-bottom: 144px;
     text-align: center;
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
     &-title {
       margin-bottom: 16px;
       font-size: 64px;
@@ -145,6 +161,7 @@ body {
     &-des {
       margin-bottom: 56px;
       font-size: 20px;
+      font-weight: medium;
       line-height: 30px;
     }
     &-row {
@@ -157,6 +174,7 @@ body {
         flex-direction: column;
         gap: 16px;
         &-text {
+          font-weight: medium;
           font-size: 20px;
           line-height: 42px;
         }
@@ -180,11 +198,29 @@ body {
     &-mail {
       font-size: 24px;
       line-height: 36px;
+      &-link {
+        text-decoration: none;
+        color: white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     &-phone {
       font-size: 24px;
       line-height: 36px;
+      &-link {
+        text-decoration: none;
+        color: white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
